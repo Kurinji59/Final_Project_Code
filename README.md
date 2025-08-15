@@ -1,23 +1,8 @@
-Satellite Manoeuvre Detection using XGBoost and LSTM
-This repository contains two Jupyter notebooks for detecting satellite manoeuvres from orbital data using a residual-based anomaly detection approach.
+# Satellite Manoeuvre Detection — Residual-Based Anomaly Detection (XGBoost & LSTM)
+This repository contains two notebooks:
 
-Contents
-EDA Notebook
+1. an EDA notebook with interactive plots for visual exploration of orbital elements and manoeuvres across satellites, and
 
-Performs exploratory data analysis on satellite orbital elements.
+2. a refactored modelling notebook that runs a residual-based anomaly detection pipeline with XGBoost and LSTM, evaluates all configurations, plots Precision–Recall curves, and summarises results.
 
-Visualises manoeuvre events and trends over time.
-
-Compares orbital elements across satellites.
-
-Model Notebook
-
-Implements anomaly detection using XGBoost and LSTM.
-
-Evaluates four configurations for each model (5 or 15 lags/windows, with or without differencing).
-
-Calculates metrics: precision, recall, F1-score, AUC-PR.
-
-Measures computational time on CPU for both models for fairness.
-
-Generates precision–recall curves and summary tables.
+The goal is to detect manoeuvres by forecasting Brouwer Mean Motion (BMM) and flagging large residual spikes. Evaluation is done via PR curves, F1-score, AUC-PR, TP/FP/FN, and CPU-only runtime for fairness.
